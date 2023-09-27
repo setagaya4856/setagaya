@@ -8,18 +8,18 @@ function newURL()
 var url = "https://script.google.com/macros/s/AKfycbx-IAyA_MTwkyqWEg9SfCd_-qdmFMZ0tds1nPfDxWACtDQprNDMciC58iTMQDjJloGU/exec";
 var no = getUrlParam("no");
 var pass = getUrlParam("pass");
-if(no !== null || pass !== null){
+if(no != null || pass != null){
 url = url + "?";
 }
-if(no !== null){
-if(url.substr(-1) !== "?"){
+if(no != null){
+if(url.substr(-1) != "?"){
 url = url + "&no=" + no;
 }else{
 url = url + "no=" + no;
 }
 }
-if(pass !== null){
-if(url.substr(-1) !== "?"){
+if(pass != null){
+if(url.substr(-1) != "?"){
 url = url + "&pass=" + pass;
 }else{
 url = url + "no=" + no;
@@ -54,6 +54,6 @@ body {
 </STYLE>	
 
 <body onLoad="newURL()">
-<iframe src="" name="cFrame"  width="98%" height="100%"></iframe>
+<iframe src="" name="cFrame"  width="98%" max-width="810px" height="100%"></iframe>
 </body>
 </html>
