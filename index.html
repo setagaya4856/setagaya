@@ -8,21 +8,21 @@ function newURL()
 var url = "https://script.google.com/macros/s/AKfycbx-IAyA_MTwkyqWEg9SfCd_-qdmFMZ0tds1nPfDxWACtDQprNDMciC58iTMQDjJloGU/exec";
 var no = getUrlParam("no");
 var pass = getUrlParam("pass");
-if(no != null || pass != null){
+if(no || pass ){
 url = url + "?";
 }
-if(no != null){
+if(no){
 if(url.substr(-1) != "?"){
 url = url + "&no=" + no;
 }else{
 url = url + "no=" + no;
 }
 }
-if(pass != null){
+if(pass){
 if(url.substr(-1) != "?"){
 url = url + "&pass=" + pass;
 }else{
-url = url + "no=" + no;
+url = url + "pass=" + pass;
 }
 }
 document.cFrame.location.href = url;
@@ -36,6 +36,7 @@ function getUrlParam(param){
         if (paramName[0] == param) {
             return decodeURI(paramName[1]);        }
     }
+    return false;
 }
 // --></script>
 </head>
